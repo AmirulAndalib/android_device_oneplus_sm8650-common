@@ -225,8 +225,8 @@ BOOT_SECURITY_PATCH := 2024-03-05
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # SEPolicy
-include device/qcom/sepolicy_vndr/SEPolicy.mk
-include hardware/oplus/sepolicy/qti/SEPolicy.mk
+#include device/qcom/sepolicy_vndr/SEPolicy.mk
+#include hardware/oplus/sepolicy/qti/SEPolicy.mk
 
 # Touch
 SOONG_CONFIG_NAMESPACES += OPLUS_LINEAGE_TOUCH_HAL
