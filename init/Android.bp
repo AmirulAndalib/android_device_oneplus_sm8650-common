@@ -4,8 +4,8 @@
 //
 
 prebuilt_etc {
-    name: "fstab.default",
-    src: "fstab.default",
+    name: "fstab.qcom",
+    src: "fstab.qcom",
     vendor: true,
 }
 
