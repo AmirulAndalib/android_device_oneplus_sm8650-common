@@ -1957,6 +1957,8 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile7.xml
 vendor/etc/default-permissions/com.qualcomm.qti.cne.xml
 vendor/etc/init/cnd.rc
+vendor/etc/vintf/manifest/datafactoryservice-saidl.xml
+vendor/etc/vintf/manifest/mwqem-saidl.xml
 vendor/lib64/libCneAppJni.so
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
@@ -2255,6 +2257,7 @@ vendor/bin/vendor.dpmd
 vendor/etc/dpm_vndr/vendor.dpm.conf
 vendor/etc/init/dpmQmiMgr.rc
 vendor/etc/init/vendor.dpmd.rc
+vendor/etc/vintf/manifest/dpm-saidl.xml
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
 vendor/lib64/vendor.libdpmctmgr.so
@@ -2471,11 +2474,13 @@ my_product/priv-app/HotwordEnrollmentXGoogleHEXAGON.apk:product/priv-app/Hotword
 
 # IMS
 #system_ext/app/ImsRcsService/ImsRcsService.apk
+#system_ext/priv-app/ims/ims.apk
 system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
 system_ext/etc/permissions/vendor.qti.ims.rcsservice.xml
 system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml
 system_ext/etc/sysconfig/qti_whitelist_system_ext.xml
 system_ext/framework/vendor.qti.ims.connection-V1.0-java.jar
+system_ext/framework/vendor.qti.ims.datachannelservice-V1-java.jar
 system_ext/framework/vendor.qti.ims.factory-V2.0-java.jar
 system_ext/framework/vendor.qti.ims.factory-V2.1-java.jar
 system_ext/framework/vendor.qti.ims.factory-V2.2-java.jar
@@ -2492,9 +2497,9 @@ system_ext/lib64/lib-imsvtutils.so
 system_ext/lib64/libdiag_system.so
 system_ext/lib64/libimscamera_jni.so
 system_ext/lib64/libimsmedia_jni.so
+system_ext/lib64/vendor.qti.ims.datachannelservice-V1-ndk.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
-#system_ext/priv-app/ims/ims.apk
 vendor/bin/ims-dataservice-daemon
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdaemon
@@ -2502,6 +2507,8 @@ vendor/etc/init/ims-dataservice-daemon.rc
 vendor/etc/init/ims_rtp_daemon.rc
 vendor/etc/init/imsdaemon.rc
 vendor/etc/seccomp_policy/imsrtp.policy
+vendor/etc/vintf/manifest/ImsRtpService-aidl.xml
+vendor/etc/vintf/manifest/imsdcservice-saidl.xml
 vendor/etc/vintf/manifest/vendor.qti.ims.factoryaidlservice.xml
 vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so
 vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so
@@ -2556,6 +2563,7 @@ vendor/lib64/vendor.qti.imsrtpservice@3.1.so
 # Identity
 vendor/bin/hw/android.hardware.identity-service-qti
 vendor/etc/init/android.hardware.identity-service-qti.rc
+vendor/etc/vintf/manifest/manifest_identity_credential.xml
 vendor/lib64/libqtiidentitycredential.so
 
 # IR
@@ -2835,8 +2843,8 @@ vendor/lib64/vendor.qti.power.pasrmanager@1.0.so
 # Power-off alarm
 vendor/bin/hw/vendor.qti.hardware.alarm-service
 vendor/bin/power_off_alarm
-vendor/etc/vintf/manifest/vendor.qti.hardware.alarm.xml
 vendor/etc/init/vendor.qti.hardware.alarm-service.rc
+vendor/etc/vintf/manifest/vendor.qti.hardware.alarm.xml
 vendor/lib64/hw/vendor.qti.hardware.alarm-impl.so
 vendor/lib64/vendor.qti.hardware.alarm-V1-ndk.so
 
@@ -2863,6 +2871,7 @@ system_ext/lib64/vendor.qti.hardware.qccvndhal@1.0.so
 system_ext/lib64/vendor.qti.qccvndhal_aidl-V1-ndk.so
 vendor/bin/qcc-vendor
 vendor/etc/init/init.qccvendor.rc
+vendor/etc/vintf/manifest/vendor.qti.qccvndhal_aidl-service.xml
 vendor/lib64/libqcc_file_agent.so
 vendor/lib64/libqcc_sdk.so
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
@@ -2879,7 +2888,9 @@ vendor/etc/init/init.qti.qcv.rc
 vendor/bin/qesdk-manager
 vendor/etc/init/qesdk-manager.rc
 vendor/etc/init/qesdk-secmanager.rc
+vendor/etc/seccomp_policy/qesdk.policy
 vendor/etc/seccomp_policy/qesdksec.policy
+vendor/etc/vintf/manifest/qesdk-manager.xml
 vendor/lib64/libqesdk2_0.so
 vendor/lib64/libqesdk_manager.so
 vendor/lib64/libqesdoem_query_sys.so
@@ -2996,6 +3007,7 @@ vendor/etc/seccomp_policy/qcrilnr@2.0.policy
 vendor/etc/seccomp_policy/qms.policy
 vendor/etc/telephony_packages.xml
 vendor/etc/vintf/manifest/android.hardware.radio.config.xml
+vendor/etc/vintf/manifest/atfwd-saidl.xml
 vendor/etc/vintf/manifest/deviceinfo-saidl.xml
 vendor/etc/vintf/manifest/qms-saidl.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.radio.qtiradioconfig.xml
@@ -3147,8 +3159,13 @@ vendor/lib64/libminksocket_vendor.so
 vendor/lib64/libqcbor.so
 
 # Secure element
+odm/lib64/android.se.omapi-V1-ndk.so
 vendor/bin/hw/android.hardware.secure_element-service.qti
 vendor/etc/init/android.hardware.secure_element-service.qti.rc
+vendor/etc/permissions/android.hardware.se.omapi.ese.xml
+vendor/etc/permissions/android.hardware.se.omapi.uicc.xml
+vendor/etc/permissions/com.android.se.xml
+vendor/etc/vintf/manifest/secure_element-service.xml
 vendor/lib64/hw/libEseUtils.so
 vendor/lib64/libGPQeSE.so
 vendor/lib64/libesesbprovision.so
