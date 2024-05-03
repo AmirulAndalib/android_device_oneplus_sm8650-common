@@ -126,6 +126,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.contexthub-V2-ndk.vendor
 
+# Cas
+PRODUCT_PACKAGES += \
+    android.hardware.cas-V1-ndk.vendor
+
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
@@ -212,6 +216,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.gnss-V3-ndk.vendor
+
+# Linker config
+PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
+    $(LOCAL_PATH)/configs/linker.config.json
 
 # Graphics
 PRODUCT_COPY_FILES += \
@@ -322,14 +330,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libavservices_minijail \
     libavservices_minijail.vendor \
-    libcodec2_hidl_plugin \
     libcodec2_hidl@1.2.vendor \
     libcodec2_vndk.vendor \
     libpalclient
-
-# Memtrack
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.memtrack-service
 
 # Net
 PRODUCT_PACKAGES += \
@@ -338,6 +341,7 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
+    android.hardware.secure_element@1.0.vendor \
     android.hardware.secure_element-V1-ndk.vendor \
     com.android.nfc_extras \
     Tag
@@ -355,6 +359,7 @@ PRODUCT_COPY_FILES += \
 # OMX
 PRODUCT_PACKAGES += \
     libOmxCore \
+    libmm-omxcore \
     libstagefrighthw
 
 # Overlays
@@ -485,7 +490,8 @@ PRODUCT_COPY_FILES += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-V1-ndk.vendor \
-    android.hardware.thermal-service.qti
+    android.hardware.thermal-service.qti \
+    android.hardware.thermal@2.0.vendor
 
 # Touch
 PRODUCT_PACKAGES += \
@@ -539,6 +545,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     android.hardware.wifi-V1-ndk.vendor \
+    android.hardware.wifi.supplicant-V1-ndk.vendor \
+    android.hardware.wifi.supplicant-V2-ndk.vendor \
     android.hardware.wifi.hostapd-V1-ndk.vendor \
     hostapd \
     libwpa_client \

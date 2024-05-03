@@ -41,7 +41,7 @@ TARGET_CPU_VARIANT := cortex-a510
 
 # Audio
 AUDIO_FEATURE_ENABLED_DLKM := true
-AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
+#AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
 AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
 AUDIO_FEATURE_ENABLED_GKI := true
 AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
@@ -106,7 +106,7 @@ BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
 # Kernel
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
-    androidboot.hypervisor.protected_vm.supported=true \
+    androidboot.hypervisor.protected_vm.supported=0 \
     androidboot.load_modules_parallel=true \
     androidboot.memcg=1 \
     androidboot.selinux=permissive \
@@ -227,8 +227,8 @@ BOOT_SECURITY_PATCH := 2024-03-05
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # SEPolicy
-#include device/qcom/sepolicy_vndr/SEPolicy.mk
-#include hardware/oplus/sepolicy/qti/SEPolicy.mk
+include device/qcom/sepolicy_vndr/SEPolicy.mk
+include hardware/oplus/sepolicy/qti/SEPolicy.mk
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
