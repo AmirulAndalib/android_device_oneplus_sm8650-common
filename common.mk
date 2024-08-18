@@ -365,6 +365,9 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libstagefrighthw
 
+# Oplus-fwk
+$(call inherit-product, hardware/oplus/oplus-fwk/oplus-fwk.mk)
+
 # Overlays
 $(call inherit-product, hardware/oplus/overlay/generic/generic.mk)
 $(call inherit-product, hardware/oplus/overlay/qssi/qssi.mk)
