@@ -65,6 +65,11 @@ ro.bluetooth.a2dp_offload.supported=true
 
 # Camera
 vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
+ro.camera.enableCamera1MaxZsl=1
+ro.vendor.oplus.camera.frontCamSize=32MP
+ro.vendor.oplus.camera.backCamSize=50MP+48MP+64MP
+ro.vendor.oplus.camera.isSupportExplorer=0
+ro.vendor.oplus.camera.isHasselbladCamera=0
 
 # Chipset
 ro.soc.manufacturer=QTI
